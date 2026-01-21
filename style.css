@@ -10,26 +10,34 @@ html {
     scroll-behavior: smooth;
 }
 
+/* 1. Create a fixed container for the background */
+.bg-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Uses the full screen */
+    z-index: -1;   /* Puts it behind your content */
+    background: linear-gradient(135deg, #23222c, #151e38, #1f1f30, #2c2c3d);
+    background-size: 400% 400%;
+    animation: gradientShift 30s ease infinite;
+}
+
+/* 2. Clean up the body so it's transparent and scrolls over the fixed bg */
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
     color: #ffffff;
-    
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-
-    /* The Fix: use min-height and background-attachment */
     min-height: 100vh;
-    background: linear-gradient(135deg, #23222c, #151e38, #1f1f30, #2c2c3d);
-    background-size: 400% 400%;
-    background-attachment: fixed; /* Keeps gradient pinned to the screen */
-    animation: gradientShift 30s ease infinite;
+    background: transparent; /* Essential */
 }
 
+/* 3. Keep your existing animation */
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -81,11 +89,6 @@ section {
     cursor: pointer;
     text-decoration: none;
     transition: background 0.3s, transform 0.2s;
-}
-
-.cta-button:hover {
-    background: #232c498c;
-    transform: scale(1.05);
 }
 
 /* Section Headings */
