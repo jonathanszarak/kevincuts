@@ -9,15 +9,25 @@ html, body {
     height: 100%;
     font-family: 'Segoe UI', sans-serif;
     color: #ffffff;
-    background: linear-gradient(45deg, #23222c, #151e38); /* calm dark gradient */
     scroll-behavior: smooth;
 }
 
+/* Animated diagonal gradient background */
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    min-height: 100vh; /* ensures gradient covers full viewport height */
+    background: linear-gradient(135deg, #23222c, #151e38, #1f1f30, #2c2c3d);
+    background-size: 400% 400%;
+    animation: gradientShift 30s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 header {
