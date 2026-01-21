@@ -1,0 +1,142 @@
+/* Reset some defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    color: #ffffff;
+    background: linear-gradient(45deg, #23222c, #151e38); /* calm dark gradient */
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header {
+    margin-top: 10px;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header .logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+/* Sections */
+section {
+    width: 90%;
+    max-width: 600px;
+    padding: 60px 20px;
+}
+
+/* Hero Section */
+#home h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+#home p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+/* Buttons */
+.cta-button {
+    display: inline-block;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    color: #ffffff;
+    background: #33344d77; /* slightly lighter dark */
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background: #232c498c;
+    transform: scale(1.05);
+}
+
+/* Section Headings */
+section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #fff;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* Contact & Socials */
+#contact p, #socials li {
+    margin-bottom: 10px;
+}
+
+.social-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: #aaaaaa;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    section {
+        padding: 40px 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    #home h1 {
+        font-size: 1.6rem;
+    }
+
+    #home p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+}
