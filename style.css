@@ -1,4 +1,4 @@
-/* Reset some defaults */
+/* 1. Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,27 +6,24 @@
 }
 
 html {
-    /* Remove height: 100% to allow the page to grow */
     scroll-behavior: smooth;
 }
 
-/* 1. Create a fixed container for the background */
+/* 2. Fixed Background Layer - This prevents the clipping */
 .bg-gradient {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Uses the full screen */
-    z-index: -1;   /* Puts it behind your content */
+    height: 100%;
+    z-index: -1;
     background: linear-gradient(135deg, #23222c, #151e38, #1f1f30, #2c2c3d);
     background-size: 400% 400%;
     animation: gradientShift 30s ease infinite;
 }
 
-/* 2. Clean up the body so it's transparent and scrolls over the fixed bg */
+/* 3. Body - Transparent to show the layer underneath */
 body {
-    margin: 0;
-    padding: 0;
     font-family: 'Segoe UI', sans-serif;
     color: #ffffff;
     display: flex;
@@ -34,16 +31,16 @@ body {
     align-items: center;
     text-align: center;
     min-height: 100vh;
-    background: transparent; /* Essential */
+    background: transparent;
 }
 
-/* 3. Keep your existing animation */
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
+/* 4. Header & Logo */
 header {
     margin-top: 10px;
 }
@@ -59,14 +56,13 @@ header .logo img {
     border-radius: 50%;
 }
 
-/* Sections */
+/* 5. Sections */
 section {
     width: 90%;
     max-width: 600px;
     padding: 60px 20px;
 }
 
-/* Hero Section */
 #home h1 {
     font-size: 2rem;
     margin-bottom: 15px;
@@ -77,13 +73,13 @@ section {
     margin-bottom: 25px;
 }
 
-/* Buttons */
+/* 6. Buttons */
 .cta-button {
     display: inline-block;
     padding: 14px 28px;
     font-size: 1.1rem;
     color: #ffffff;
-    background: #33344d77; /* slightly lighter dark */
+    background: #33344d77;
     border: none;
     border-radius: 12px;
     cursor: pointer;
@@ -91,7 +87,7 @@ section {
     transition: background 0.3s, transform 0.2s;
 }
 
-/* Section Headings */
+/* 7. Headings */
 section h2 {
     font-size: 1.8rem;
     margin-bottom: 20px;
@@ -108,14 +104,13 @@ section h2::after {
     border-radius: 2px;
 }
 
-/* Contact & Socials */
+/* 8. Links & Socials */
 #contact p, #socials li {
     margin-bottom: 10px;
 }
 
 .social-links {
     list-style: none;
-    padding: 0;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -125,37 +120,16 @@ section h2::after {
     color: #ffffff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.2s;
 }
 
 .social-links a:hover {
-    color: #aaaaaa;
+    color: #aaa;
 }
 
-/* Responsive adjustments */
+/* 9. Mobile Adjustments */
 @media (max-width: 480px) {
-    section {
-        padding: 40px 15px;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    #home h1 {
-        font-size: 1.6rem;
-    }
-
-    #home p {
-        font-size: 1rem;
-    }
-
-    .cta-button {
-        padding: 12px 24px;
-        font-size: 1rem;
-    }
-
-    section h2 {
-        font-size: 1.5rem;
-    }
+    section { padding: 40px 15px; }
+    header h1, #home h1 { font-size: 1.5rem; }
+    #home p { font-size: 1rem; }
+    .cta-button { padding: 12px 24px; font-size: 1rem; }
 }
